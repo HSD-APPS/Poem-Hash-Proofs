@@ -1,0 +1,57 @@
+{
+  "id": "2026-09-24-03",
+  "kind": "poem",
+  "status": "sealed",
+  "sha256": "53dbf75aa41cc362fb78241c34e008339a39fadafd5ec44334b901d1fc1a1d52",
+  "sha512": "82e0dbbd8cc8298b4daaab78ef27614a4762c05acddfd00b14823664c2d57ac3f3bd4a0bdb825718aed63e53f6687338fd8ec8dda54e9ef4f2c998faf7552e52",
+  "timestamps": [
+    {
+      "authority": "freetsa",
+      "imprint": "sha256",
+      "time": "2026-09-24T12:25:46Z",
+      "serial": "0x08611062",
+      "request": "freetsa-sha256.tsq",
+      "reply": "freetsa-sha256.tsr"
+    },
+    {
+      "authority": "freetsa",
+      "imprint": "sha512",
+      "time": "2026-09-24T12:25:47Z",
+      "serial": "0x08611068",
+      "request": "freetsa-sha512.tsq",
+      "reply": "freetsa-sha512.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha256",
+      "time": "2026-09-24T12:25:47Z",
+      "serial": "0xF120C334605C1C613AF9421C01DBCDF3",
+      "request": "digicert-sha256.tsq",
+      "reply": "digicert-sha256.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha512",
+      "time": "2026-09-24T12:25:47Z",
+      "serial": "0x52717CE2AC7F75EADCC879666849609A",
+      "request": "digicert-sha512.tsq",
+      "reply": "digicert-sha512.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha256",
+      "time": "2026-09-24T12:25:48Z",
+      "serial": "0x1502EBB289175A7C4DFC405F9C30974814630256",
+      "request": "sectigo-sha256.tsq",
+      "reply": "sectigo-sha256.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha512",
+      "time": "2026-09-24T12:25:48Z",
+      "serial": "0x44D9B92C0DDCFEFE30425CD1A82EBF4F047C9137",
+      "request": "sectigo-sha512.tsq",
+      "reply": "sectigo-sha512.tsr"
+    }
+  ]
+}
