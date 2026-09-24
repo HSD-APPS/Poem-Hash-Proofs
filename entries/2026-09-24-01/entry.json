@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-24-01",
+  "status": "sealed",
+  "sha256": "f62bbc40e4b262eca8690ccfed5993a9ae9653d0e5b6f91e8030b9d39ae6d7cf",
+  "sha512": "4a7d302261dda52eed75269923c5fe173c1fd8a73f3d21286abbe77a38d09e12f3c774d5a8c6136f9d611cd7fb094b8d90be0b1d067eb07bc61b188a4a93623b",
+  "timestamps": [
+    {"authority": "FreeTSA", "imprint": "sha256", "time": "2026-09-24T11:39:24Z", "serial": "0x08609CC4", "request": "freetsa-sha256.tsq", "reply": "freetsa-sha256.tsr"},
+    {"authority": "FreeTSA", "imprint": "sha512", "time": "2026-09-24T11:39:07Z", "serial": "0x08609C3A", "request": "freetsa-sha512.tsq", "reply": "freetsa-sha512.tsr"}
+  ]
+}
