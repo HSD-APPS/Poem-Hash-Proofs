@@ -16,6 +16,20 @@ Poems are easy to copy and easy to claim. This register lets me answer any dispu
 
 When a poem is published, anyone can hash the published text, find the matching entry and check the signatures. If they match, that exact text existed at the time the authorities signed.
 
+### Proof methods
+
+Every registration is backed by five independent methods:
+
+| # | Method | What it records | Where |
+|---|---|---|---|
+| 1 | [FreeTSA](https://freetsa.org) RFC 3161 timestamp | Signed time of each hash | `entries/<id>/freetsa-*.tsr` |
+| 2 | [DigiCert](https://www.digicert.com) RFC 3161 timestamp | Signed time of each hash | `entries/<id>/digicert-*.tsr` |
+| 3 | [Sectigo](https://www.sectigo.com) RFC 3161 timestamp | Signed time of each hash | `entries/<id>/sectigo-*.tsr` |
+| 4 | [Wayback Machine](https://web.archive.org/web/*/github.com/HSD-APPS/Poem-Hash-Proofs*) (Internet Archive) | Dated public copies of this repository's pages | [captures](https://web.archive.org/web/*/github.com/HSD-APPS/Poem-Hash-Proofs*) |
+| 5 | [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/HSD-APPS/Poem-Hash-Proofs) | Permanent archive of the full git history | [archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/HSD-APPS/Poem-Hash-Proofs) |
+
+Software Heritage archived this repository on 2026-09-24 at 12:33 UTC, including entries `2026-09-24-01` to `2026-09-24-05`: snapshot `swh:1:snp:825b5e39501b22870da2346a3b256abf2ed0b805`, commit `swh:1:rev:3f6193bbd418ba05d420c75ef2d91b9e6b463cca`.
+
 ### Secrets
 
 Some poems hide something (a name, a date) in their structure. The explanation of what is hidden and how to find it is kept in a separate file, and that file is registered as its own entry, with `"kind": "secret"` and `"of"` pointing to the poem's entry. It is sealed the same way: only its hash is public. Revealing the file later proves that the hidden layers were designed by the time of the timestamp, not discovered or invented afterwards.
@@ -26,6 +40,7 @@ Some poems hide something (a name, a date) in their structure. The explanation o
 |---|---|---|
 | FreeTSA, DigiCert and Sectigo signatures (`.tsr`) | The hash existed at the signed time | Each authority's clock and signing key; they are independent of each other |
 | This public repository | The registration was published openly, under my account | GitHub's record of when the commit became public |
+| Wayback Machine and Software Heritage copies | The registration was public by the archive date, and survives even if GitHub or this repository disappears | Each archive's own records |
 | Commit dates in git history | Nothing by itself: they are set by the committer's computer | Not relied on |
 
 The signed timestamps are the core proof. The public repository adds a visible, dated announcement tied to my identity.
