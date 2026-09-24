@@ -70,29 +70,101 @@ Entry ids are the registration date plus a sequence number (`2026-09-24-01`). Th
 - **Revisions get a new entry.** A revised poem is registered again; earlier entries stay as proof of earlier versions.
 - **Revealing.** When a poem is published, its entry's `status` becomes `revealed` and a note with the poem's public location is added next to it. The hashes and timestamps are not touched.
 
-## Verify an entry
+## Verify a poem (for an independent third party)
 
-Requires `openssl` (standard on macOS and Linux). Registering also needs `curl` and `jq`.
+This is how anyone (a publisher, a judge, a competition jury, another poet) can check, without trusting the author, that a given poem existed at the registered time.
+
+### What you need from the author
+
+1. **The poem file itself**, exactly as it was registered: the original file, byte for byte (for example `poem.txt`). A copy retyped, pasted into a document, or re-saved with another editor will not match, because the hash covers every character, space, line break and encoding byte.
+2. **The entry id** (for example `2026-09-24-03`). This is optional: the entry can also be found from the file's hash.
+3. **Optionally, the secret file** of that poem, if the author wants to prove that hidden elements in the poem were designed by them. It has its own entry (`"kind": "secret"`, `"of": "<poem entry id>"`) and is checked the same way.
+
+### What you take from public sources, not from the author
+
+- **The signed timestamps** (`.tsr` files) and the recorded hashes: in this repository, under `entries/<id>/`.
+- **The authorities' root certificates**, obtained yourself:
+  - FreeTSA: https://freetsa.org/files/cacert.pem and https://freetsa.org/files/tsa.crt
+  - DigiCert (DigiCert Trusted Root G4) and Sectigo (USERTrust RSA Certification Authority): already in the trust store of most operating systems (on Linux usually `/etc/ssl/certs/ca-certificates.crt`), or from https://www.digicert.com/kb/digicert-root-certificates.htm and https://www.sectigo.com/knowledge-base.
+  - Copies are also in `certs/`, but using your own copies means you rely on nothing supplied by the author.
+- **Tools**: `openssl`, `git`, `curl` (standard on macOS and Linux); `jq` is optional.
+
+### Step by step
+
+**Step 1. Get this repository.**
 
 ```sh
-scripts/verify.sh path/to/poem.txt 2026-09-24-01
+git clone https://github.com/HSD-APPS/Poem-Hash-Proofs
+cd Poem-Hash-Proofs
 ```
 
-Or by hand:
+**Step 2. Compute the hash of the file the author gave you.**
 
 ```sh
-sha256sum poem.txt        # compare with "sha256" in entries/<id>/entry.json
-openssl ts -verify -data poem.txt \
-  -in entries/<id>/freetsa-sha256.tsr \
-  -CAfile certs/freetsa/cacert.pem -untrusted certs/freetsa/tsa.crt
-openssl ts -reply -in entries/<id>/freetsa-sha256.tsr -text   # shows the signed time
-
-# DigiCert and Sectigo replies carry their own certificate chain; only the root is needed
-openssl ts -verify -data poem.txt -in entries/<id>/digicert-sha256.tsr -CAfile certs/digicert/cacert.pem
-openssl ts -verify -data poem.txt -in entries/<id>/sectigo-sha256.tsr -CAfile certs/sectigo/cacert.pem
+openssl dgst -sha256 poem.txt        # or: sha256sum poem.txt / shasum -a 256 poem.txt
 ```
 
-`Verification: OK` means the authority signed that exact file's hash at the time shown. For extra assurance, use root certificates you obtained yourself instead of the copies in `certs/`: FreeTSA's from https://freetsa.org/files/; DigiCert's and Sectigo's roots are also in the trust store of most operating systems.
+The output is a 64-character fingerprint, for example `53dbf75aa41cc362fb78241c34e008339a39fadafd5ec44334b901d1fc1a1d52`.
+
+**Step 3. Find that exact hash in the registry.**
+
+```sh
+grep <hash> REGISTRY.md
+grep '"sha256"' entries/<id>/entry.json
+```
+
+The hash you computed must be identical, character for character, to the one in `REGISTRY.md` and in `entries/<id>/entry.json`. If it is not found, the file is not the registered one (or it was changed); stop here.
+
+**Step 4. Check each authority's signed timestamp against the file.**
+
+```sh
+E=entries/<id>
+
+# FreeTSA
+curl -O https://freetsa.org/files/cacert.pem -O https://freetsa.org/files/tsa.crt
+openssl ts -verify -data poem.txt -in $E/freetsa-sha256.tsr -CAfile cacert.pem -untrusted tsa.crt
+
+# DigiCert and Sectigo (their replies carry their own certificate chain; only a trusted root is needed)
+openssl ts -verify -data poem.txt -in $E/digicert-sha256.tsr -CAfile /etc/ssl/certs/ca-certificates.crt
+openssl ts -verify -data poem.txt -in $E/sectigo-sha256.tsr  -CAfile /etc/ssl/certs/ca-certificates.crt
+```
+
+On macOS, use `-CAfile certs/digicert/cacert.pem` and `-CAfile certs/sectigo/cacert.pem`, after comparing them with the roots in Keychain Access, or export the system roots with `security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain > roots.pem`.
+
+Each command must print `Verification: OK`. This means the authority itself signed the hash of this exact file. Repeat with the `-sha512.tsr` files for a second, independent hash.
+
+**Step 5. Read the signed time.**
+
+```sh
+openssl ts -reply -in $E/digicert-sha256.tsr -text
+```
+
+Look at three lines:
+
+- `Time stamp:` the moment the authority signed, in UTC. This is the proof date.
+- `Message data:` the hash the authority signed. It is the same 64-character hash you computed in step 2.
+- `Serial number:` the authority's unique serial for this timestamp.
+
+Do the same for the FreeTSA and Sectigo replies. The three times are from three independent organisations.
+
+**Step 6. Check the public archives (optional, independent of GitHub).**
+
+- Software Heritage: https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/HSD-APPS/Poem-Hash-Proofs shows dated archive visits of this repository. Browse to `entries/<id>/entry.json` in a visit and confirm it records the same hash.
+- Wayback Machine: https://web.archive.org/web/*/github.com/HSD-APPS/Poem-Hash-Proofs* lists dated captures of this repository's pages.
+
+**Step 7. Conclude.**
+
+If steps 2 to 5 pass, the file presented is, byte for byte, the one whose hash the authorities signed at the time shown. Nobody, including the author, can create or backdate those signatures. Anyone claiming the poem as theirs would need their own independently signed proof from an earlier time.
+
+As a control, change a single character in a copy of the file and repeat steps 2 to 4: the hash is different, it is not in the registry, and every `openssl ts -verify` prints `Verification: FAILED` (`message imprint mismatch`).
+
+### Shortcut
+
+`scripts/verify.sh` runs steps 2 to 5 using the certificates in `certs/`:
+
+```sh
+scripts/verify.sh poem.txt <id>
+```
 
 ## Register a new poem
 
