@@ -1,55 +1,57 @@
 {
-  "id": "2026-09-24-01",
-  "kind": "poem",
+  "id": "2026-09-24-02",
+  "kind": "secret",
+  "of": "2026-09-24-01",
+  "note": "The poem’s secret: the key to what is hidden in the poem of entry 2026-09-24-01.",
   "status": "sealed",
-  "sha256": "f62bbc40e4b262eca8690ccfed5993a9ae9653d0e5b6f91e8030b9d39ae6d7cf",
-  "sha512": "4a7d302261dda52eed75269923c5fe173c1fd8a73f3d21286abbe77a38d09e12f3c774d5a8c6136f9d611cd7fb094b8d90be0b1d067eb07bc61b188a4a93623b",
+  "sha256": "4b87a8944496f7224683352993e1f9baa1957197e061e162797dc7a21a6ef339",
+  "sha512": "9adedf17d92a83e3aa85169891f07b3e30b9bc5e9db77ace0ed1f5890c884b1f24676350e8c7c2fc1e27414203769cdbc54b19f6d75ae81e973184684b9b890b",
   "timestamps": [
     {
       "authority": "freetsa",
       "imprint": "sha256",
-      "time": "2026-09-24T11:39:24Z",
-      "serial": "0x08609CC4",
+      "time": "2026-09-24T12:08:31Z",
+      "serial": "0x0860E170",
       "request": "freetsa-sha256.tsq",
       "reply": "freetsa-sha256.tsr"
     },
     {
       "authority": "freetsa",
       "imprint": "sha512",
-      "time": "2026-09-24T11:39:07Z",
-      "serial": "0x08609C3A",
+      "time": "2026-09-24T12:08:32Z",
+      "serial": "0x0860E17A",
       "request": "freetsa-sha512.tsq",
       "reply": "freetsa-sha512.tsr"
     },
     {
       "authority": "digicert",
       "imprint": "sha256",
-      "time": "2026-09-24T12:08:22Z",
-      "serial": "0x74EF65349257A1E4FE6F524A659023B1",
+      "time": "2026-09-24T12:08:32Z",
+      "serial": "0x0D4DBBF83C3430EF743CF7E6744F0B90",
       "request": "digicert-sha256.tsq",
       "reply": "digicert-sha256.tsr"
     },
     {
       "authority": "digicert",
       "imprint": "sha512",
-      "time": "2026-09-24T12:08:22Z",
-      "serial": "0xEBFE627FE26EA432A26A795DD559271C",
+      "time": "2026-09-24T12:08:32Z",
+      "serial": "0xCA240B462582215B7482023398052301",
       "request": "digicert-sha512.tsq",
       "reply": "digicert-sha512.tsr"
     },
     {
       "authority": "sectigo",
       "imprint": "sha256",
-      "time": "2026-09-24T12:08:22Z",
-      "serial": "0x848337D3822A8CA188BFCC237BBF0621654EAFF9",
+      "time": "2026-09-24T12:08:32Z",
+      "serial": "0xD34317EE3208A71DCA62392C52A25EE18F4B5DCC",
       "request": "sectigo-sha256.tsq",
       "reply": "sectigo-sha256.tsr"
     },
     {
       "authority": "sectigo",
       "imprint": "sha512",
-      "time": "2026-09-24T12:08:22Z",
-      "serial": "0x0C99E028F8975735008FA964785E532D96AC30E3",
+      "time": "2026-09-24T12:08:33Z",
+      "serial": "0xA2C83A725320211F71911AC6F0B49979BB4650D9",
       "request": "sectigo-sha512.tsq",
       "reply": "sectigo-sha512.tsr"
     }
