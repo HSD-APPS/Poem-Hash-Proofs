@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-25-01",
+  "kind": "poem",
+  "revises": "2026-09-24-03",
+  "note": "Revision of the poem of entry 2026-09-24-03: two diacritic corrections and one pair of parentheses removed. No letter or word changed.",
+  "status": "sealed",
+  "sha256": "94483b6fd3e746a50656a59887d260b92292e448a5205ae1b06b6a173bce1c73",
+  "sha512": "4d60c4b4ecf565852f2123f18e69de03adae593dfe2c4e31cfa0deefad81c7e7cb56d9e9d7f9826560d71c05b0246495b8ea87038986247e452de1efe19eab75",
+  "timestamps": [
+    {
+      "authority": "freetsa",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:48Z",
+      "serial": "0x08721C51",
+      "request": "freetsa-sha256.tsq",
+      "reply": "freetsa-sha256.tsr"
+    },
+    {
+      "authority": "freetsa",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:49Z",
+      "serial": "0x08721C5E",
+      "request": "freetsa-sha512.tsq",
+      "reply": "freetsa-sha512.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:48Z",
+      "serial": "0x147E0A399BB44C60350C142B52EB8197",
+      "request": "digicert-sha256.tsq",
+      "reply": "digicert-sha256.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:49Z",
+      "serial": "0x4444092CBFF44043B0D52D90FAC178E6",
+      "request": "digicert-sha512.tsq",
+      "reply": "digicert-sha512.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:49Z",
+      "serial": "0x3A764769A1CE68170FCBED4BA87A17888ECD00C1",
+      "request": "sectigo-sha256.tsq",
+      "reply": "sectigo-sha256.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:50Z",
+      "serial": "0x3D79A4C6593A387844D2EEFB632D8F57D41A278E",
+      "request": "sectigo-sha512.tsq",
+      "reply": "sectigo-sha512.tsr"
+    }
+  ]
+}

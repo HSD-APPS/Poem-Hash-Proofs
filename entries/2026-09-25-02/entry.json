@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-25-02",
+  "kind": "secret",
+  "of": "2026-09-25-01",
+  "note": "The poem’s secret: the key to what is hidden in the poem of entry 2026-09-25-01.",
+  "status": "sealed",
+  "sha256": "626a4e255ae35961f4ade5347aab83a2cc185948704b68377fbf3e443aba0853",
+  "sha512": "6ee643f7fdac3108b534fc96fbf9b13afa4ea25d8e01ce138b8eeb64575fbc59f2219f1291f3ccbabe006e97ca1dcc342db21f5798c1b0cc2b7c196fa7b15564",
+  "timestamps": [
+    {
+      "authority": "freetsa",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:52Z",
+      "serial": "0x08721C7D",
+      "request": "freetsa-sha256.tsq",
+      "reply": "freetsa-sha256.tsr"
+    },
+    {
+      "authority": "freetsa",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:53Z",
+      "serial": "0x08721C85",
+      "request": "freetsa-sha512.tsq",
+      "reply": "freetsa-sha512.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:52Z",
+      "serial": "0x1230CCC9E9FF0646DEA9EABD983594C8",
+      "request": "digicert-sha256.tsq",
+      "reply": "digicert-sha256.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:53Z",
+      "serial": "0x8E2DAB6E4C80986EDE92C1DBE626D028",
+      "request": "digicert-sha512.tsq",
+      "reply": "digicert-sha512.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha256",
+      "time": "2026-09-25T16:28:52Z",
+      "serial": "0xF60B09A058447C4320599EEE5D2471914CE9A03E",
+      "request": "sectigo-sha256.tsq",
+      "reply": "sectigo-sha256.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha512",
+      "time": "2026-09-25T16:28:53Z",
+      "serial": "0xB749F71059109D67CCDDDE731E9898496DFABD8F",
+      "request": "sectigo-sha512.tsq",
+      "reply": "sectigo-sha512.tsr"
+    }
+  ]
+}
