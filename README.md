@@ -28,7 +28,7 @@ Every registration is backed by five independent methods:
 | 4 | [Wayback Machine](https://web.archive.org/web/*/github.com/HSD-APPS/Poem-Hash-Proofs*) (Internet Archive) | Dated public copies of this repository's pages | [captures](https://web.archive.org/web/*/github.com/HSD-APPS/Poem-Hash-Proofs*) |
 | 5 | [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/HSD-APPS/Poem-Hash-Proofs) | Permanent archive of the full git history | [archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/HSD-APPS/Poem-Hash-Proofs) |
 
-Software Heritage archived this repository on 2026-09-24 at 12:33 UTC, including entries `2026-09-24-01` to `2026-09-24-05`: snapshot `swh:1:snp:825b5e39501b22870da2346a3b256abf2ed0b805`, commit `swh:1:rev:3f6193bbd418ba05d420c75ef2d91b9e6b463cca`.
+Software Heritage archived this repository on 2026-09-24 at 12:33 UTC, including entries `2026-09-24-01` to `2026-09-24-05`: snapshot `swh:1:snp:825b5e39501b22870da2346a3b256abf2ed0b805`, commit `swh:1:rev:3f6193bbd418ba05d420c75ef2d91b9e6b463cca`. It archived it again on 2026-09-25 at 16:38 UTC, including entries up to `2026-09-25-02`: snapshot `swh:1:snp:c4422ec4f3f438a9c7c93ce0ba9d0fa5271c570b`, commit `swh:1:rev:4d29cf3dad7b494766ffdff5ee4f8041a74f871b`.
 
 ### Secrets
 
