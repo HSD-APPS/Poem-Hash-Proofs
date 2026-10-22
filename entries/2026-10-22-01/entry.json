@@ -1,0 +1,59 @@
+{
+  "id": "2026-10-22-01",
+  "kind": "poem",
+  "revises": "2026-09-25-01",
+  "note": "Revision of the poem of entry 2026-09-25-01: the author's name added after the last line. No other change.",
+  "status": "sealed",
+  "sha256": "e0667784ec71e57b3fe4e82395249d282febc3d279401a0eb90aee9de598d765",
+  "sha512": "7afac29f0b62e8e9105b87ba0cd08b0f759245550a905c3e43269ea90157d3cee183104e5c93d6629b43fedf6b564928cf3d6a7dd668cb7d83056f359a5f03ac",
+  "timestamps": [
+    {
+      "authority": "freetsa",
+      "imprint": "sha256",
+      "time": "2026-10-22T04:44:09Z",
+      "serial": "0x0958E454",
+      "request": "freetsa-sha256.tsq",
+      "reply": "freetsa-sha256.tsr"
+    },
+    {
+      "authority": "freetsa",
+      "imprint": "sha512",
+      "time": "2026-10-22T04:44:10Z",
+      "serial": "0x0958E457",
+      "request": "freetsa-sha512.tsq",
+      "reply": "freetsa-sha512.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha256",
+      "time": "2026-10-22T04:44:10Z",
+      "serial": "0xE22DD5B9D421E974D30B2BD595CC22CC",
+      "request": "digicert-sha256.tsq",
+      "reply": "digicert-sha256.tsr"
+    },
+    {
+      "authority": "digicert",
+      "imprint": "sha512",
+      "time": "2026-10-22T04:44:10Z",
+      "serial": "0xCAAE2F019E41F001518EFCC024FFFC0B",
+      "request": "digicert-sha512.tsq",
+      "reply": "digicert-sha512.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha256",
+      "time": "2026-10-22T04:44:10Z",
+      "serial": "0x6AC03D5186FC7DAB814ADD525A4B684A93EC7E94",
+      "request": "sectigo-sha256.tsq",
+      "reply": "sectigo-sha256.tsr"
+    },
+    {
+      "authority": "sectigo",
+      "imprint": "sha512",
+      "time": "2026-10-22T04:44:11Z",
+      "serial": "0x89F937316AF7CC6EC6BF1C365314B7B1136661E3",
+      "request": "sectigo-sha512.tsq",
+      "reply": "sectigo-sha512.tsr"
+    }
+  ]
+}
